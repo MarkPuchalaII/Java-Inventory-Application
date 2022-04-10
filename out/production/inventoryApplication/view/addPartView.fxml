@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPartView">
+    <Text layoutX="16.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Part">
+        <font>
+            <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Text layoutX="32.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="id" disable="true" editable="false" layoutX="160.0" layoutY="46.0" prefWidth="120.0" promptText="Auto Gen - Disabled">
+        <font>
+            <Font name="System Italic" size="12.0" />
+        </font>
+    </TextField>
+    <RadioButton fx:id="inHouse" layoutX="160.0" layoutY="18.0" mnemonicParsing="false" onAction="#setLabel" selected="true" text="In-House">
+      <toggleGroup>
+         <ToggleGroup fx:id="partType" />
+      </toggleGroup></RadioButton>
+    <RadioButton fx:id="outsourced" layoutX="296.0" layoutY="18.0" mnemonicParsing="false" onAction="#setLabel" text="Outsourced" toggleGroup="$partType" />
+    <Text layoutX="32.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="name" layoutX="160.0" layoutY="78.0" prefWidth="120.0" promptText="Brakes" />
+    <Text layoutX="32.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inv">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="stock" layoutX="160.0" layoutY="110.0" prefWidth="120.0" promptText="15" />
+    <Text layoutX="32.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price / Cost">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="price" layoutX="160.0" layoutY="142.0" prefWidth="120.0" promptText="12.99" />
+    <Text layoutX="32.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="max" layoutX="160.0" layoutY="174.0" prefWidth="120.0" promptText="20" />
+    <Text layoutX="296.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="min" layoutX="340.0" layoutY="174.0" prefWidth="120.0" promptText="1" />
+    <Text fx:id="identifier" layoutX="32.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine ID">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="radioed" layoutX="160.0" layoutY="206.0" prefWidth="120.0" promptText="111" />
+
+    <Text fx:id="nameError" layoutX="32.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="stockError" layoutX="32.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="priceError" layoutX="32.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="maxError" layoutX="32.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="minError" layoutX="32.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="radioError" layoutX="32.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+
+    <Button fx:id="savePartBtn" layoutX="340.0" layoutY="240.0" mnemonicParsing="false" onAction="#save" prefWidth="56.0" text="Save" />
+    <Button fx:id="cancel" layoutX="404.0" layoutY="240.0" mnemonicParsing="false" onAction="#toMainView" prefWidth="56.0" text="Cancel" />
+
+</AnchorPane>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductView">
+    <Rectangle arcHeight="25.0" arcWidth="25.0" fill="#ffffff00" height="564.0" layoutX="32.0" layoutY="32.0" stroke="BLACK" strokeType="INSIDE" width="846.0" />
+    <Text layoutX="48.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Product">
+        <font>
+            <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Text layoutX="64.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="id" disable="true" editable="false" layoutX="128.0" layoutY="113.0" prefWidth="160.0" promptText="Auto Gen - Disabled">
+        <font>
+            <Font name="System Italic" size="12.0" />
+        </font>
+    </TextField>
+
+    <Text layoutX="64.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="name" layoutX="128.0" layoutY="177.0" prefWidth="160.0" promptText="Brakes" />
+    <Text layoutX="64.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inv">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="stock" layoutX="128.0" layoutY="241.0" prefWidth="120.0" promptText="15" />
+    <Text layoutX="64.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="price" layoutX="128.0" layoutY="305.0" prefWidth="120.0" promptText="12.99" />
+    <Text layoutX="64.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="max" layoutX="128.0" layoutY="369.0" prefWidth="120.0" promptText="20" />
+    <Text layoutX="264.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <TextField fx:id="min" layoutX="308.0" layoutY="369.0" prefWidth="120.0" promptText="1" />
+
+    <Text fx:id="nameError" layoutX="64.0" layoutY="436.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="stockError" layoutX="64.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="priceError" layoutX="64.0" layoutY="484.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="maxError" layoutX="64.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+    <Text fx:id="minError" layoutX="64.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font size="16.0" />
+        </font>
+    </Text>
+
+    <TextField fx:id="searchPart" layoutX="698.0" layoutY="48.0" onAction="#searchParts" promptText="Search Part ID or Name" />
+    <TableView fx:id="inventoryTable" layoutX="460.0" layoutY="81.0" prefHeight="200.0" prefWidth="386.0">
+        <columns>
+            <TableColumn fx:id="invID" maxWidth="60.0" minWidth="50.0" prefWidth="60.0" text="Part ID" />
+            <TableColumn fx:id="invName" maxWidth="80.0" minWidth="75.0" text="Part Name" />
+            <TableColumn fx:id="invStock" maxWidth="110.0" minWidth="100.0" prefWidth="110.0" text="Inventory Level" />
+            <TableColumn fx:id="invPrice" prefWidth="135.0" text="Price / Cost per Unit" />
+        </columns>
+    </TableView>
+    <Text fx:id="inventoryText" layoutX="469.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+
+    <Button fx:id="addPart" layoutX="776.0" layoutY="289.0" mnemonicParsing="false" onAction="#addPart" prefWidth="56.0" text="Add" />
+
+    <TableView fx:id="associatedTable" layoutX="460.0" layoutY="322.0" prefHeight="200.0" prefWidth="386.0">
+        <columns>
+            <TableColumn fx:id="assID" maxWidth="60.0" minWidth="50.0" prefWidth="60.0" text="Part ID" />
+            <TableColumn fx:id="assName" maxWidth="80.0" minWidth="75.0" text="Part Name" />
+            <TableColumn fx:id="assStock" maxWidth="110.0" minWidth="100.0" prefWidth="110.0" text="Inventory Level" />
+            <TableColumn fx:id="assPrice" prefWidth="135.0" text="Price / Cost per Unit" />
+        </columns>
+    </TableView>
+    <Text fx:id="associatedText" layoutX="468.0" layoutY="547.0" strokeType="OUTSIDE" strokeWidth="0.0">
+        <font>
+            <Font name="System Bold" size="16.0" />
+        </font>
+    </Text>
+    <Button fx:id="removePart" layoutX="698.0" layoutY="530.0" mnemonicParsing="false" onAction="#removePart" prefWidth="148.0" text="Remove Associated Part" />
+    <Button fx:id="saveProductBtn" layoutX="698.0" layoutY="563.0" mnemonicParsing="false" onAction="#save" prefWidth="56.0" text="Save" />
+    <Button fx:id="cancel" layoutX="790.0" layoutY="563.0" mnemonicParsing="false" onAction="#cancel" prefWidth="56.0" text="Cancel" />
+</AnchorPane>
